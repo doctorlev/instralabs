@@ -3,7 +3,7 @@ body{font: 76% arial,sans-serif;text-align:center}
 p{margin:0 10px 10px}
 a{padding:5px; text-decoration:none; color:#000000;}
 img#left{float:left;width:25%; height:100%}
-img#right{float:right;width:22%; height:100%}
+img#right{float:right;width:20%; height:100%}
 div#header{background-color:#FFFFFF;height:100px;}
 /*div#header{background-color:#F3F2ED;height:80px;}*/
 /*div#header img {float:left;width:20%}*/
