@@ -1,72 +1,118 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
-<head>
-  <title>Instralabs2</title>
-  <!-- <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"> -->
-  <meta http-equiv="content-type" content="text/html">
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="styles.css" />
-  <style type="text/css">
-  h1 {
-    text-align: center;
-    font-size: 180%;
-    line-height: 120%;
-    padding-left: 15% 0;
-  }
-  h2 {
-    text-align: center;d
-    text-decoration: underline;
-    line-height: 280%;
-    padding-left: 15% 0;
-    /*padding: 2%;*/
-  }
-  h3 {
-    line-height: 110%;
-    padding: 5% 0;
-  }
-
-  </style>
-</head>
+<title>InstraLabs</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+  body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+  body {font-size:16px;}
+  .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+  .w3-half img:hover{opacity:1}
+</style>
 <body>
-<div id="container" >
-  <div id="header" >
-    <img id="left" src="./assets/GS lay left.png">
-    <img id="right" src="./assets/RS lay right.png">
-    <h1><a href="#">Congo Case Carrier</a></h1>
-  </div>
-  <div id="wrapper">
-    <div id="content">
-      <h2><strong>Introduction</strong></h2>
-      <p>Welcome to InstraLabs!</p>
+
+  <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:200px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="w3-container">
+      <h3 class="w3-padding-64"><b>CONGO<br><br>InstraLabs</b></h3>
+    </div>
+    <div class="w3-bar-block">
+      <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+      <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Showcase</a>
+      <a href="#insructions" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Instructions</a>
+      <a href="#faq" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">FAQ</a>
+      <a href="#purchase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Purchase</a>
+      <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+    <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+    <span>CONGO case carrier</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-main" style="margin-left:240px;margin-right:40px">
+
+    <!-- Header -->
+    <div class="w3-container" style="margin-top:80px" id="showcase">
+      <h1 class="w3-jumbo"><b>CONGO Case Carrier</b></h1>
+      <h1 class="w3-xxxlarge w3-text-red"><b>InstraLabs</b></h1>
+      <hr style="width:50px;border:5px solid red" class="w3-round">
       <p>We are glad to show you how to use our patent pending strap
         system, the <strong>Congo Case Carrier</strong>. <br><br>
         It is designed to help you carry your instrument case on your back,
         just like backpack.</p>
-      <h2><strong>Components</strong></h2>
+        <p>Click the pictures below to enlarge</p>
+    </div>
+
+    <!-- Photo grid (modal) -->
+    <div class="w3-row-padding">
+      <div class="w3-third">
+        <img src="./assets/street-1.jpg" style="width:80%" onclick="onClick(this)" alt="Carry it on your back">
+        <img src="./assets/guitar03.jpg" style="width:80%" onclick="onClick(this)" alt="interior view - both shapes">
+        <img src="./assets/GS man 1c.png" style="width:80%" onclick="onClick(this)" alt="Congo on the back">
+      </div>
+
+      <div class="w3-third">
+        <img src="./assets/InstraLabs live 2.png" style="width:90%" onclick="onClick(this)" alt="Guitar-shape case">
+        <img src="./assets/guitar01c.png" style="width:80%" onclick="onClick(this)" alt="Congo with rectangular case">
+        <img src="./assets/guitar02.jpg" style="width:80%" onclick="onClick(this)" alt="exterior view - both shapes">
+      </div>
+
+      <div class="w3-third">
+        <img src="./assets/guitar01b.jpg" style="width:80%" onclick="onClick(this)" alt="Congo with guitar-shaped case">
+        <img src="./assets/02.jpg" style="width:50%" onclick="onClick(this)" alt="interior view">
+        <img src="./assets/street-2.jpg" style="width:80%" onclick="onClick(this)" alt="Carry it on your back">
+      </div>
+    </div>
+
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+      <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+      <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+        <img id="img01" class="w3-image">
+        <p id="caption"></p>
+      </div>
+    </div>
+
+    <!-- Instructions -->
+    <div class="w3-container" id="insructions" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>Instructions</b></h1>
+      <hr style="width:50px;border:5px solid red" class="w3-round">
+      <!-- <h2><strong>Components</strong></h2> -->
+      <h2 class="w3-xlarge w3-text-red"><b>Components</b></h2>
       <p>Let’s briefly review the components.
         See the numbered components on pictures below.</p>
       <p>There are two horizontal straps, upper(1) and lower(2)</p>
-      <img src="./assets/01b-2.png" width=100%>
+      <img src="./assets/01b-2.png" style="width:50%" onclick="onClick(this)" alt="Horizontal and Vertical straps">
 
       <p>And there are two vertical straps (3). <br>
         They run through the horizontal straps, and are adjustable. <br>
         By adjusting these strap adjustors (4), you control the position of
         the case on your back.
       </p>
-      <img src="./assets/01c.png" width=100%>
+      <img src="./assets/01c.png" style="width:50%" onclick="onClick(this)" alt="Adjustors">
       <p>If you tighten them, the case goes up(A).
         If you loosen them, the case goes down(B).
       </p>
-      <img src="./assets/02a.png" width=100%>
+      <img src="./assets/02a.png" style="width:50%" onclick="onClick(this)" alt="incorrect vertical adjustment">
       <p>I like to have the bottom of the case level with your bottom,
         so that I can sit while carrying the case.
       </p>
-      <img src="./assets/02b.png" width=100%>
+      <img src="./assets/02b.png" style="width:50%" onclick="onClick(this)" alt="correct vertical adjustment">
 
       <p>Note the buckles, which appear on the left sides of the horizontal straps.
         These two buckles allow you to easily access the interior of the case.
       </p>
-      <img src="./assets/01c-1.png" width=100%>
+      <img src="./assets/01c-1.png"  style="width:50%" onclick="onClick(this)" alt="Adjustors">
 
       <p>Note the <strong>sliders at the ends of the straps</strong>. They keep the straps nice and neat.
       </p>
@@ -74,9 +120,9 @@
         Note the <strong>shoulder straps (6)</strong>,
         the <strong>chest strap (7)</strong>, and the <strong>handle (8)</strong>.
       </p>
-      <img src="./assets/01d-1.png" width=100%>
+      <img src="./assets/01d-1.png"  style="width:50%" onclick="onClick(this)" alt="shoulder (6), chest (7) and handle (8) straps">
 
-      <h2><strong>Equipping</strong></h2>
+      <h2 class="w3-xlarge w3-text-red"><b>Equipping</b></h2>
       <p>Attaching the straps to the case is really easy. <br>
         First, lean your case against something, like a table, upside down,
         so that the heavy side is up.
@@ -97,7 +143,8 @@
           the straps. They will break first to indicate you the straps are too tight.
           Don't worry, we put a couple of extra sliders to the package.
         </p>
-      <h2><strong>Wearing</strong></h2>
+
+      <h2 class="w3-xlarge w3-text-red"><b>Wearing</b></h2>
       <p>This is the best part. <br>
         <ul>
           <li>Lift the case by the shoulder straps or the handle onto a table. </li>
@@ -108,34 +155,37 @@
           If it is too high or too low, adjust the vertical strap adjustors.  <br>
           If it is too loose, adjust the horizontal strap adjustors.
         </p>
-      <h2><strong>Support of guitar-shape cases</strong></h2>
+
+      <h2 class="w3-xlarge w3-text-red"><b>Support of guitar-shape cases</b></h2>
       <p>For extra support, disconnect the chest strap and place at the
          bottom, like on the picture below.
       </p>
-      <img src="./assets/04gs-1.png" width=100%>
+      <img src="./assets/04gs-1.png" style="width:50%" onclick="onClick(this)" alt="chest straps replaced to support guitar-shape case">
+    </div>
 
-    </div>
-    <div id="space">
-      <br><br><br><br>
-    </div>
-  </div>
-  <div id="navigation">
-    <!-- <p><strong>Order the CONGO</strong></p> -->
-    <br>
-    <button onclick="window.open('https://www.amazon.com/Congo-Carrier-Hard-Instrument-Cases/dp/B07812LX8L','_blank')">Shop on Amazon</button>
-    <!-- <button onclick="location.href='https://www.amazon.com/Congo-Carrier-Hard-Instrument-Cases/dp/B07812LX8L'" type="button">Shop on Amazon</button> -->
-    <br><br>
-    <button onclick="window.open('https://www.facebook.com/instralabs/','_blank')">Visit on Facebook</button>
-    <!-- <button onclick="location.href='https://www.facebook.com/instralabs/'" type="button" target="_blank">Visit on Facebook</button> -->
-    <br><br>
-    <!-- <ul>
-      <li><a href="https://www.amazon.com/Congo-Carrier-Hard-Instrument-Cases/dp/B07812LX8L"  target="_blank">Shop Now</a></li>
-      <li><a href="https://www.amazon.com/Congo-Carrier-Hard-Instrument-Cases/dp/B07812LX8L"  target="_blank">CONGO on Amazon</a></li>
-    </ul> -->
-    <div id="truth">
-      <h4>...To tell you the truth...</h4>
-      <img src="./assets/Pic2.jpg" width=100%>
-      <p>... the idea for this company - actually just us two music lovers - began in pain.
+    <!-- FAQ -->
+    <div class="w3-container" id="faq" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>FAQ.</b></h1>
+      <hr style="width:50px;border:5px solid red" class="w3-round">
+      <p>Q: Can I use the Congo Carrier to carry both rectangular and guitar-shaped cases?</p>
+      <p>A: You certainly can. But we recommend removing the chest strap and attaching it at the bottom. (See photo)</p>
+      <img src="./assets/04gs-1.png" width=50%>
+      <p>Q: Is CONGO only available on Amazon?</p>
+      <p>A: For now, but we will also be selling it on eBay, etsy, as well as this very site!</p>
+      <br>
+      <button onclick="window.open('https://www.amazon.com/Congo-Carrier-Hard-Instrument-Cases/dp/B07812LX8L','_blank')">Shop on Amazon</button>
+      <br>
+      <br>
+      <p>Q: Can I access the inside of my case without removing CONGO?</p>
+      <p>A: Definitely. Just unlock the side buckles on the left and grab what you need.</p>
+      <br>
+      <br>
+      <p>Q: I have a question/idea/suggestion about the product. How can I submit it?</p>
+      <p>A: Contact Us (soon)</p>
+      <br>
+      <br>
+      <p>Q: How did you get this idea?</p>
+      <p>A: ... the idea for this company - actually just us two music lovers - began in pain.
         That’s right, carrying our instrument cases around was a real pain in the neck
          - and arms, shoulders, and back. We knew there had to be an easier way.
        </p>
@@ -147,45 +197,142 @@
          It’s that simple, really. <br>
          So buy the Congo Carrier and make life a little more musical.
          And easier. Much, much easier.
-       </p>
-    </div>
-  </div>
-  <div id="extra">
-    <!-- <p><strong>find CONGO</strong></p> -->
-    <br>
-    <button onclick="window.open('https://www.amazon.com/Congo-Carrier-Hard-Instrument-Cases/dp/B07812LX8L','_blank')">Shop on Amazon</button>
-    <!-- <button onclick="location.href='https://www.amazon.com/Congo-Carrier-Hard-Instrument-Cases/dp/B07812LX8L'" type="button">Shop on Amazon</button> -->
-    <br><br>
-    <button onclick="window.open('https://www.facebook.com/instralabs/','_blank')">Visit on Facebook</button>
-    <!-- <button onclick="location.href='https://www.facebook.com/instralabs/'" type="button" target="_blank">Visit on Facebook</button> -->
-    <br><br>
-    <!-- <ul>
-      <li><a href="https://www.amazon.com/Congo-Carrier-Hard-Instrument-Cases/dp/B07812LX8L"  target="_blank">Shop Now</a></li>
-      <li><a href="https://www.amazon.com/Congo-Carrier-Hard-Instrument-Cases/dp/B07812LX8L"  target="_blank">CONGO on Amazon</a></li>
-    </ul> -->
-    <div id="qa">
-      <!-- <br><br> -->
-      <h4 ><strong>F. A. Q.</strong></h4>
-      <img src="./assets/Pic1.jpg" width=100%>
-      <p>Q: Can I use the Congo Carrier to carry both rectangular and guitar-shaped cases?</p>
-      <p>A: You certainly can. But we recommend removing the chest strap and attaching it at the bottom. (See photo)</p>
-      <img src="./assets/04gs-1.png" width=100%>
-      <p>Q: Is CONGO only available on Amazon?</p>
-      <p>A: For now, but we will also be selling it on eBay, etsy, as well as this very site!</p>
-      <img src="./assets/GuitarShape-1b.png" width=100%>
-      <p>Q: Can I access the inside of my case without removing CONGO?</p>
-      <p>A: NDefinitely. Just unlock the side buckles on the left and grab what you need.</p>
-      <img src="./assets/GS man 1b.png" width=100%>
-      <p>Q: I have a question/idea/suggestion about the product. How can I submit it?</p>
-      <p>A: Contact Us (soon)</p>
 
-      <p></p>
     </div>
+
+    <!-- The Team -->
+    <!-- <div class="w3-row-padding w3-grayscale">
+      <div class="w3-col m4 w3-margin-bottom">
+        <div class="w3-light-grey">
+          <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+          <div class="w3-container">
+            <h3>John Doe</h3>
+            <p class="w3-opacity">CEO & Founder</p>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col m4 w3-margin-bottom">
+        <div class="w3-light-grey">
+          <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
+          <div class="w3-container">
+            <h3>Jane Doe</h3>
+            <p class="w3-opacity">Designer</p>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col m4 w3-margin-bottom">
+        <div class="w3-light-grey">
+          <img src="/w3images/team3.jpg" alt="Mike" style="width:100%">
+          <div class="w3-container">
+            <h3>Mike Ross</h3>
+            <p class="w3-opacity">Architect</p>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Purchase / Pricing Tables -->
+    <div class="w3-container" id="purchase" style="margin-top:55px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>Purchase.</b></h1>
+      <hr style="width:50px;border:5px solid red" class="w3-round">
+      <!-- <p>Buy CONGO on Amazon</p> -->
+      <button onclick="window.open('https://www.amazon.com/Congo-Carrier-Hard-Instrument-Cases/dp/B07812LX8L','_blank')">Buy CONGO on Amazon</button>
+    </div>
+
+    <!-- <div class="w3-row-padding">
+      <div class="w3-half w3-margin-bottom">
+        <ul class="w3-ul w3-light-grey w3-center">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+          <li class="w3-padding-16">Floorplanning</li>
+          <li class="w3-padding-16">10 hours support</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">20% furniture discount</li>
+          <li class="w3-padding-16">Good deals</li>
+          <li class="w3-padding-16">
+            <h2>$ 199</h2>
+            <span class="w3-opacity">per room</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="w3-half">
+        <ul class="w3-ul w3-light-grey w3-center">
+          <li class="w3-red w3-xlarge w3-padding-32">Pro</li>
+          <li class="w3-padding-16">Floorplanning</li>
+          <li class="w3-padding-16">50 hours support</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">50% furniture discount</li>
+          <li class="w3-padding-16">GREAT deals</li>
+          <li class="w3-padding-16">
+            <h2>$ 249</h2>
+            <span class="w3-opacity">per room</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-red w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+    </div> -->
+
+    <!-- Contact -->
+    <div class="w3-container" id="contact" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>Contact.</b></h1>
+      <hr style="width:50px;border:5px solid red" class="w3-round">
+      <p>Visit us on Facebook</p>
+      <button onclick="window.open('https://www.facebook.com/instralabs/','_blank')">Visit on Facebook</button>
+      <br>
+      <br>
+      <p>Do you have a question/idea/suggestion about the product? Fill out the form and fill me in with the details :) We love listening to you!</p>
+      <form action="/action_page.php" target="_blank">
+        <div class="w3-section">
+          <label>Name</label>
+          <input class="w3-input w3-border" type="text" name="Name" required>
+        </div>
+        <div class="w3-section">
+          <label>Email</label>
+          <input class="w3-input w3-border" type="text" name="Email" required>
+        </div>
+        <div class="w3-section">
+          <label>Message</label>
+          <input class="w3-input w3-border" type="text" name="Message" required>
+        </div>
+        <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send Message</button>
+      </form>
+    </div>
+
+  <!-- End page content -->
   </div>
 
-  <div id="footer">
-    <p>Footer</p>
-  </div>
-</div>
+  <!-- W3.CSS Container -->
+  <!-- <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">InstraLabs</a></p></div> -->
+  <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right"> InstraLabs</p></div>
+
+  <script>
+  // Script to open and close sidebar
+  function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("myOverlay").style.display = "block";
+  }
+
+  function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("myOverlay").style.display = "none";
+  }
+
+  // Modal Image Gallery
+  function onClick(element) {
+    document.getElementById("img01").src = element.src;
+    document.getElementById("modal01").style.display = "block";
+    var captionText = document.getElementById("caption");
+    captionText.innerHTML = element.alt;
+  }
+  </script>
+
 </body>
 </html>
