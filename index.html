@@ -20,6 +20,22 @@
     /*cursor: pointer;*/
     cursor:zoom-in;
   }
+  /*for video*/
+  .video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px; height: 0; overflow: hidden;
+  }
+
+  .video-container iframe,
+  .video-container object,
+  .video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  }
 </style>
 <body>
 
@@ -179,9 +195,14 @@
       <h1 class="w3-xxxlarge w3-text-red"><b>Videos</b></h1>
       <hr style="width:50px;border:5px solid red" class="w3-round">
       <h2 class="w3-xlarge w3-text-red"><b>Introduction</b></h1>
-      <iframe width="420" height="315"
-        src="https://www.youtube.com/embed/PB6uxhhiu-w">
-      </iframe>
+      <div class="video-container">
+        <iframe width="853" height="480"
+          src="https://www.youtube.com/embed/VnjmMnNgTPE" frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+      <!-- <iframe width="420" height="315"
+        src="https://www.youtube.com/embed/VnjmMnNgTPE">
+      </iframe> -->
       <!-- <a href="https://youtu.be/PB6uxhhiu-w" target="_blank">Introduction to Congo</a> -->
 
     </div>
